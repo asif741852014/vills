@@ -24,7 +24,9 @@ jobs:
           always-auth: true
 
       - name: Log in to GitHub Package Registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
+          echo "@asif741852014:registry=https://npm.pkg.github.com" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use PAT for NODE_AUTH_TOKEN
 
