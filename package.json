@@ -1,5 +1,5 @@
 {
-    "name": "@<github-username>/<repository-name>",
+    "name": "@asif741852014/vills",
     "version": "1.0.0",
     "description": "Test npm package for GitHub Actions",
     "main": "index.js",
@@ -8,4 +8,3 @@
       "registry": "https://npm.pkg.github.com"
     }
   }
-  
