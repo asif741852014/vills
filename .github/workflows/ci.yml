@@ -3,12 +3,11 @@ name: Publish npm Package
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch
+      - main
 
 permissions:
   packages: write
   contents: read
-
 
 jobs:
   publish-npm:
@@ -23,10 +22,13 @@ jobs:
         with:
           node-version: '14'
           registry-url: 'https://npm.pkg.github.com'
+          always-auth: true   # Ensure token authentication is always used
 
       - name: Log in to GitHub Package Registry
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
 
+      - name: Verify Authentication with GitHub Packages
+        run: npm whoami  # Optional: Check authentication status
 
       - name: Publish npm Package
         run: npm publish
