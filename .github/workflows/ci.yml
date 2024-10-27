@@ -29,8 +29,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Explicitly set NODE_AUTH_TOKEN
 
-      - name: Verify Authentication with GitHub Packages
-        run: npm whoami
-
       - name: Publish npm Package
         run: npm publish
