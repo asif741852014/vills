@@ -1,0 +1,11 @@
+{
+    "name": "@<github-username>/<repository-name>",
+    "version": "1.0.0",
+    "description": "Test npm package for GitHub Actions",
+    "main": "index.js",
+    "license": "MIT",
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com"
+    }
+  }
+  
